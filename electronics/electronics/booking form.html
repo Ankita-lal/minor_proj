@@ -1,0 +1,109 @@
+<html>
+<head>
+<style>
+body{
+background-image: url("background.jpg");
+    width:100%;
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+margin:0;
+padding:0;
+}
+.heading 
+{
+text-align:center;
+background-color: black;
+height: 100px;
+width:100%;
+font-size:40px;
+}
+input[type=text], input[type=password] {
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    border:2px solid #4CAF50;
+    border-radius:20px;
+}
+.container {
+    padding: 16px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+.select
+{
+padding: 12px 12px;
+width: 400px;
+border-radius: 40px;
+}
+.date
+{
+padding: 12px 12px;
+width: 800px;
+border-radius: 40px;
+}
+</style>
+</head>
+<body>
+<div class="heading">
+ <font color="white"  face="Century Gothic" style="text-shadow:3px 3px 3px grey;"> BOOKING FORM </font>
+</div>
+<br>
+ <form>
+<div class="container">
+   <label>Name</label>&#8594;<br>
+      <input type="text" placeholder="Enter name" name="email" required>
+<br>
+    <label>Name on card</label>&#8594;<br>
+      <input type="text" placeholder="Enter Name on Card" name="email" required>
+<br>
+    <label>Card Number</label>&#8594;<br>
+      <input type="text" placeholder="Enter Card Number" name="email" required>
+   <br><br>
+<td>
+<br>
+        <td>
+         <b><font size="4">&nbsp &nbsp  Year of card expiry </b></font>
+        </td>
+            &nbsp &nbsp<input type="date" name="birthday" style="width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 40px;" required>
+        </td>
+<br><br><center>
+    <div class="clearfix">
+     <a href="FINAL.html" ><button type="button"  class="book"><FONT FACE="Century Gothic" size="6"><u> BOOK </u></font></button></a>
+   </center> </div>
+  </div>
+</form>
+</body>
+</html> 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Rice</title>
+   <style>
+       body {
+           background-image: url("background.jpg");
+           width: 100%;
+           height: 100%;
+           background-attachment: fixed;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+           margin: 0;
+           padding: 0;
+       }
+
+       .heading {
+           background-color: black;
+           color: white;
+           text-align: center;
+           padding: 10px 0;
+           margin-bottom: 20px;
+       }
+
+       .container {
+           width: 80%;
+           margin: 0 auto;
+           overflow: hidden;
+       }
+
+       .image {
+           float: left;
+           width: 40%;
+           margin-right: 20px;
+       }
+
+       .image img {
+           width: 100%;
+           height: auto;
+       }
+
+       .text {
+           float: right;
+           width: 50%;
+           font-size: 16px;
+           line-height: 1.5;
+       }
+
+       .farm-score-btn-container {
+           text-align: center;
+           margin-top: 20px;
+       }
+
+       .farm-score-btn {
+           background-color: #4CAF50;
+           color: white;
+           padding: 10px 20px;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+       }
+   </style>
+</head>
+<body>
+   <div class="heading">
+       <h1>Rice</h1>
+   </div>
+   <div class="container">
+       <div class="text">
+           <p>
+               Rice is mainly grown in rain-fed areas that receive heavy annual rainfall. That is why it is fundamentally a kharif crop in India. It demands a temperature of around 25 degrees Celsius and above, and rainfall of more than 100 cm (39 in). Rice is also grown through irrigation in those areas that receive less rainfall.
+           </p>
+           <p>
+               Rice can be cultivated by different methods based on the type of region. But in India, traditional methods are still in use for harvesting rice. The fields are initially plowed and fertilizer is applied which typically consists of cow dung, and then the field is smoothed.
+           </p>
+       </div>
+       <div class="image">
+           <img src="ricenew.jpg" alt="Rice">
+       </div>
+   </div>
+
+   <div class="farm-score-btn-container">
+       <button class="farm-score-btn" onclick="displayFarmScore()">Farm Score</button>
+   </div>
+
+   <script>
+       function displayFarmScore() {
+           // Replace this with your actual functionality to display farm score
+           alert("Farm Score: 85");
+       }
+   </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wheat</title>
+    <style>
+        body {
+            background-image: url("background.jpg");
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .heading {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .image {
+            float: left;
+            width: 40%;
+            margin-right: 20px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text {
+            float: right;
+            width: 50%;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .farm-score-btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .farm-score-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Wheat</h1>
+    </div>
+    <div class="container">
+        <div class="text">
+            <p>
+                Wheat is a grass widely cultivated for its seed, a cereal grain that is a worldwide staple food. The many species of wheat together make up the genus Triticum (/ˈtrɪtɪkəm/);[3] the most widely grown is common wheat (T. aestivum). The archaeological record suggests that wheat was first cultivated in the regions of the Fertile Crescent around 9600 BC. Botanically, the wheat kernel is a caryopsis, a type of fruit.
+            </p>
+            <p>
+                Wheat is grown on more land area than any other food crop (220.7 million hectares or 545 million acres in 2021). World trade in wheat is greater than for all other crops combined. In 2021, world wheat production was 771 million tonnes (850 million short tons), making it the second most-produced cereal after maize (known as corn in the US and Australia; wheat is often called corn in other countries).
+            </p>
+        </div>
+        <div class="image">
+            <img src="wheatnew.jpg" alt="Wheat">
+        </div>
+    </div>
+
+    <div class="farm-score-btn-container">
+        <button class="farm-score-btn" onclick="displayFarmScore()">Farm Score</button>
+    </div>
+
+    <script>
+        function displayFarmScore() {
+            // Replace this with your actual functionality to display farm score
+            alert("Farm Score: 85");
+        }
+    </script>
+</body>
+</html>

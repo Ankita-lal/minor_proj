@@ -1,0 +1,388 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Farm Score Prediction</title>
+<style>
+.imgcontainer{
+text-align:center;
+}
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+input[type=text], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid grey;
+    border-radius:20px;
+    box-sizing: border-box;
+}
+
+button {
+     font-size:18px;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 6px solid white;
+border-radius:40px;
+cursor: pointer;
+    width: 100%;
+}
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: black;
+}
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+.container {
+    padding: 36px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: white;
+     margin: auto;
+     margin-top:10px;
+    border: 10px solid black;
+    border-radius:40px;
+    width: 80%;
+    color:black;
+     font-size:20px;
+     font-face:calibri;
+}
+.close {
+    position: absolute;
+    right: 35px;
+    top: 45px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+body {
+    background-image: url("background.jpg");
+    width:100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footer
+{
+background-color: black;
+height: 90px;
+width:100%;
+text-align:center;
+line-height: 90px;
+border:30px;
+margin:0px;
+padding:px;
+}
+.footer a
+{
+text-decoration:none;
+color:white;
+}
+.modala{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modala-content {
+    background-color:#f1f1f1;
+    margin:0% auto 5% auto;
+    border: 1px solid #888;
+    width: 60%;
+    font-face:calibri;
+}
+.head{
+font-size:100px;
+font-family:Century Gothic;
+color:white;
+text-shadow:10px 10px 10px black;
+}
+.mysidenav{
+height:100%;
+width:0;
+position:fixed;
+z-index:1;
+top:0;
+left:0;
+background-color: #424242;
+opacity:1;
+overflow-x:hidden;
+padding-top:60px;
+transition:0.2s;
+}
+.mysidenav a{
+padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:20px;
+color:#FFD700;
+display:block;
+}
+.mysidenav .closebtn{
+position:absolute;
+top:0;
+right:25px;
+font-size:36px;
+margin-left: 50px;
+}
+#main{
+transition:margin-left 0.5s;
+padding: 20px;
+}
+@media screen and (max-height: 450px) {
+.mysidenav{
+padding-top: 15px;
+}
+.mysidenav a{
+font-size: 18px;
+}
+}
+
+.icon-bar {
+  position:fixed;
+  top:50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display:block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+    <div class="icon-bar">
+  <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Ftab%3Dwm&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="google"><i class="fa fa-google"></i></a>
+  <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="https://www.youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
+<div id="main">
+<div id="sidenav" class="mysidenav"><font face="Century Gothic">
+  <span id="a" class="closebtn" onclick="closeNav()" style="padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 50px;
+      color: #FFD700; /* Specify color using hex code */
+      display: block;
+      transition: 1s;
+      cursor: pointer;"> &times; </span><br><br>
+  <font size="8" face="Century Gothic" color="#FFD700"><b>FarmPro</b></font><br>
+<br>
+<hr color="white">
+<br>
+<input type="text" placeholder="Search" style="width: 140px; display: inline-block; background-color:#FFF3C7;" required>
+<a href="https://www.google.com/" style="display:inline-block;cursor:pointer;color:white;font:20px cambria;">Search</a>
+<br><br>
+<hr color="white">
+<span id="a" onclick="document.getElementById('id01').style.display='block'" style="padding:8px 8px 8px 32px;
+text-decoration:none;
+font-size:20px;
+color:#FFD700;
+display:block;
+transition:1s;
+cursor:pointer;">Login</span>
+<a href="About Us.html">About Us </a>
+<a href="1.html">Rice</a>
+<a href="2.html">Wheat</a>
+<a href="3.html">Gram </a>
+<a href="new.html">Cotton </a>
+<a href="4.html">Pigeon Pea</a>
+</font></div>
+<div class="head">
+<center><b><i>
+<A HREF="About Us.html"><img src="new12.jpg" height="400" width="700" style="box-shadow: 10px 10px 5px black;border-radius:15px;"></a>
+</center>
+</b>
+</i>
+</div><br><br><br>
+<div id="id01" class="modal"><font face="Century Gothic">
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+</div>
+ <form class="modal-content animate">
+    <div class="container">
+      <label> Name </label>&#8594;<br>
+      <input type="text" placeholder="Enter name" name="email" required>
+<br>
+      <label>Phone Number</label>&#8594;<br>
+      <input type="text" placeholder="Enter phone number" name="email" required>
+<BR>
+      <label>Email</label>&#8594;<br>
+      <input type="text" placeholder="Enter Email" name="email" required>
+       <br>
+      <label>Password</label>&#8594;<br>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+       <br>
+      <label>Repeat Password</label>&#8594;<br>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <br><input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+       Already a member? <span onclick="document.getElementById('id02').style.display='block'" style="cursor:pointer;"><u>login</u></span>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn" onclick="signup()">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div id="id02" class="modala">
+
+  <form class="modala-content animate">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+
+ <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  </div>
+  <form class="modal-content animate">
+    <div class="container"><font color="black">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+<br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password"  name="psw" required>
+ <br>
+      <button type="submit" style="width:48%" onclick="signup1()">Login</button>&nbsp
+     <button style="width:40%;" type="button" onclick="document.getElementById('id02').style.display='none'">Cancel</button>
+<br>
+<label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label> <span class="psw"><a href="#">Forgot password?</a></span>
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+</div></form></font></font>
+</div><center>
+<b><span style="font-size:50px;color:white;cursor:pointer;text-shadow:10px 10px 10px black;" onclick="openNav()"> &#9776; </span> </center>
+<br><br><br><br>
+<a href="1.html"><img src="rice.jpg" title="Rice" height="300" width="40%" style="box-shadow: 5px 5px 5px black; border-radius: 15px; margin-right: 90px;"></a>
+<a href="2.html"><img src="wheat1.jpg" title="Wheat" height="300" width="40%" style="box-shadow: 5px 5px 5px black; border-radius: 15px; margin-left: 80px;"></a>
+<br><br>
+<a href="new.html"><img src="cotton.jpg" title="Cotton" height="300" width="40%" style="box-shadow: 5px 5px 5px black; border-radius: 15px; margin-right: 90px;"></a>
+<a href="4.html"><img src="pigeon pea1.jpg" title="Pigeon Pea" height="300" width="40%" style="box-shadow: 5px 5px 5px black; border-radius: 15px; margin-left: 80px;"></a>
+<br><br>
+<a href="3.html"><img src="gram.png" class="center"  title="Gram" height="300" width="40%" style="box-shadow: 5px 5px 5px black; border-radius: 15px;"></a>
+<br><br><br>
+<div class="footer"><font color="white" face="Century Gothic" size="3" >
+
+<font color="white">
+&nbsp&nbsp&nbsp&nbsp&nbspCopyright &#169; 2024 PULSE Inc. All rights Reserved.
+&nbsp &nbsp &nbsp &nbsp India</font>
+</font>
+</div>
+</div>
+<script>
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+var modal = document.getElementById('id02');
+
+window.onclick = function(event) {
+    if (event.target == modala) {
+        modal.style.display = "none";
+    }
+}
+function openNav() {
+document.getElementById( "sidenav" ).style.width = "250px";
+document.getElementById( "main" ).style.marginLeft = "250px";
+}
+function closeNav() {
+document.getElementById( "sidenav" ).style.width = "0";
+document.getElementById( "main" ).style.marginLeft = "0";
+}
+
+</script>
+</body>
+</html>
